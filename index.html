@@ -4,6 +4,24 @@
   <title> Kacie Yee's Personal Website </title>
 
   <script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal")
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            //mess with elementVisible later to make appear sooner
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+            else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
     
   </script>
 
@@ -26,6 +44,7 @@
         color: #3A78A6;
         font-family: Helvetica;
         text-align: center;
+
         padding: 14px 16px;
         text-decoration: none;
         border-bottom: 3px solid transparent;
@@ -40,10 +59,15 @@
         border-bottom: 3px solid #3A78A6
     }
 
+    .row {
+        margin: auto;
+        width: 65%;
+    }
+
     .column {
         float: left;
         width: 50%;
-        padding: 20 px;
+        padding: 25;
         height: 400 px;
     }
     
@@ -58,7 +82,7 @@
         font-family: Helvetica;
         color: #114C77;
         text-decoration: none;
-        font-size: 200%;
+        font-size: 2vw;
         font-weight: 60;
         padding: 6px 35px;
     }
@@ -67,7 +91,7 @@
         font-family: Helvetica;
         color: #114C77;
         text-decoration: none;
-        font-size: 110%;
+        font-size: 1.2vw;
         font-weight: 90;
         padding: 10px 35px;
     }
@@ -130,18 +154,20 @@
   
         <br>
       
-      <img id = "banner" src = "https://cdn.discordapp.com/attachments/646535330765471766/1090052761678250166/image.png" 
+      <img id = "banner" src = "https://cdn.discordapp.com/attachments/646535330765471766/1097629660189306991/image.png" 
            width = 100% 
            height = auto 
            alt = "I am Kacie Yee">
     
      <br><br>
 
-     <div class = "row">
+     <div class = "row reveal">
+        <p> <br><br> </p>
+
         <div class = "column">
             <h2> Hello! </h2>
             <p> 
-                My name is Kacie Yee, and aspiring engineer in 
+                My name is Kacie Yee, an aspiring engineer in 
                 my second year of studying Computer Science at 
                 the University of Texas at Dallas. 
                 <br><br>
@@ -160,7 +186,13 @@
                 height = auto 
                 alt = "Photo of Kacie by the beach">
         </div>
+
+        <img src = "https://cdn.discordapp.com/attachments/646535330765471766/1097661191356158022/image.png" 
+           width = 14% 
+           height = auto >
      </div>
+
+     
 
 
 
